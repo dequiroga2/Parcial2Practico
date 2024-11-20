@@ -1,0 +1,41 @@
+<h1 style="background-color:rgb(53, 130, 245);">Upcoming conferences</h1>
+
+<div class="row">
+    <div class="col-md-7">
+        <table class="table ">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Starts</th>
+                    <th>Ends</th>
+                </tr>
+            </thead>
+            <tbody id='TableBody'>
+                <tr *ngFor="let conferencia of conferencias" (click)="onSelect(conferencia)">
+                    <td>{{ conferencia.id }}</td>
+                    <td>{{ conferencia.name }}</td>
+                    <td>{{ conferencia.starts }}</td>
+                    <td>{{ conferencia.ends }}</td>
+                </tr>   
+            </tbody>
+            <tfoot>
+                <tr>
+                    
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    
+    <div *ngIf="ConferenciaSelect" class="col-md-5 d-flex">
+        <div class="row justify-content-center w-100">
+            <div id="cardDetails" class="card-padding row justify-content-center">
+                <h4>{{ConferenciaSelect.starts}} - {{ConferenciaSelect.ends}}, {{ConferenciaSelect.venue}}</h4>
+                <div id="detailsBody" class="card-body">
+                    <h2>{{ ConferenciaSelect.name }}</h2>          
+                    <p>{{ ConferenciaSelect.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

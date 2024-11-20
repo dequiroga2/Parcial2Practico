@@ -1,0 +1,1 @@
+import { Conferencia } from "./conferencia.model";
